@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Products from "./Components/Product";
 
 export default function Home() {
   return (
    <div>
-    <h2 className="">hello</h2>
+    <Products/>
    </div>
   );
 }
