@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Signup from './Compmonents/Signup'
 
 export default function signup() {
     return (
@@ -24,33 +25,7 @@ export default function signup() {
                             <div className="flex-1 h-px bg-gray-300"></div>
                         </div>
 
-                        <form className="space-y-4">
-                            <input
-                                type="text"
-                                placeholder="Full Name"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email address"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                
-                            />
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                
-                            />
-                            <button
-                                type="submit"
-                                className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition disabled:opacity-50"
-                                
-                            >
-                                Sign Up
-                            </button>
-                        </form>
+                       <Signup/>
                     </div>
 
                     <div className="text-xs flex gap-2 text-center text-gray-400 mt-6">
