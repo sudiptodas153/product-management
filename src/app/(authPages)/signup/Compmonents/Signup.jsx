@@ -1,15 +1,39 @@
 "use client"
 import { RegisterUser } from '@/app/action/auth/RegisterUser';
+import { useRouter } from 'next/navigation';
 import React from 'react'
+import Swal from 'sweetalert2';
 
 export default function Signup() {
-    const handleSubmit = async(e) =>{
+    const router = useRouter();
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const form = e.target;
         const name = form.name.value
         const email = form.email.value
         const password = form.password.value
-       await RegisterUser({name, email, password})
+        try {
+            const result = await RegisterUser({ name, email, password });
+
+            if (result?.insertedId) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: 'Your account has been created!',
+                    timer: 2000,
+                    showConfirmButton: false,
+                });
+                setTimeout(() => {
+                    router.push('/signin')
+                }, 2000)
+
+            }
+        }
+        catch (error) {
+            console.log(error)
+        }
+
+
 
     }
     return (

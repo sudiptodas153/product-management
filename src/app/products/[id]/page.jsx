@@ -1,5 +1,6 @@
 import dbConnect from '@/lib/dbConnect';
 import { ObjectId } from 'mongodb';
+import Link from 'next/link';
 import React from 'react'
 
 export default async function ProductDetails({ params }) {
@@ -68,9 +69,11 @@ export default async function ProductDetails({ params }) {
               </div>
             </div>
 
-            <button className="btn btn-primary mt-6 w-full py-3 text-lg">
-              Add to Cart
-            </button>
+            <Link href={`/ordernow/${data._id}`}>
+              <button className="btn btn-primary mt-6 w-full py-3 text-lg">
+                Order Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
